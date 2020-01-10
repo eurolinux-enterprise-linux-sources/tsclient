@@ -1,0 +1,329 @@
+# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
+# This file is distributed under the same license as the package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tsclient\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-11 15:30+0200\n"
+"PO-Revision-Date: 2008-07-14 15:32\n"
+"Last-Translator: Novell Language <language@novell.com>\n"
+"Language-Team: Novell Language <language@novell.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/tsc-edit-dialog.c:189
+msgid "<b>This connection must have a name</b>"
+msgstr "<b>この接続には名前が必要です</b>"
+
+#: ../src/tsc-edit-dialog.c:261
+msgid "Connection"
+msgstr "接続"
+
+#: ../src/tsc-edit-dialog.c:262
+msgid "The TSCConnection to edit"
+msgstr "編集するTSCConnection"
+
+#: ../src/tsc-edit-dialog.c:279 ../src/tsc-window.c:581
+msgid "Edit Connection"
+msgstr "接続の編集"
+
+#: ../src/tsc-util.c:32
+#, c-format
+msgid "ERROR: %s: %s\n"
+msgstr "エラー: %s: %s\n"
+
+#: ../src/tsc-util.c:40
+msgid "Terminal Server Client - Error"
+msgstr "ターミナルサーバクライアント - エラー"
+
+#: ../src/tsc-util.c:52 ../src/tsc-manager.c:641 ../src/tsc-manager.c:681
+#: ../src/tsc-main.c:312 ../src/tsc-main.c:324
+#, c-format
+msgid "Unknown Error"
+msgstr "未知のエラー"
+
+#: ../src/tsc-util.c:58
+#, c-format
+msgid "Child process crashed"
+msgstr "子プロセスがクラッシュしました"
+
+#: ../src/tsc-util.c:61
+#, c-format
+msgid "Child terminated by signal"
+msgstr "信号によって子が終了されました"
+
+#: ../src/tsc-manager.c:208
+#, c-format
+msgid "Failed to load connection file '%s': %s"
+msgstr "接続ファイル '%s' をロードできませんでした: %s"
+
+#: ../src/tsc-manager.c:209
+msgid "Unknown Error."
+msgstr "未知のエラー。"
+
+#: ../src/tsc-manager.c:217
+#, c-format
+msgid "Failed to load connection file '%s': No provider specified."
+msgstr "接続ファイル '%s' をロードできませんでした: プロバイダが指定されていません。"
+
+#: ../src/tsc-manager.c:225
+#, c-format
+msgid "Failed to load connection file '%s': Provider '%s' is not available."
+msgstr "接続ファイル '%s' をロードできませんでした: プロバイダ '%s' は使用できません。"
+
+#: ../src/tsc-manager.c:400
+#, c-format
+msgid "<span weight=\"bold\">Reconnect to '%s'?</span>\n\nYou have been unexpectedly disconnected from '%s'.  Would you like to reconnect?\n\n<i>%s</i>"
+msgstr "<span weight=\"bold\">'%s' へ再接続しますか?</span>\n\n'%s' から予期せず接続解除されました。再接続しますか?\n\n<i>%s</i>"
+
+#: ../src/tsc-manager.c:404
+msgid "Terminal Server Client - Reconnect"
+msgstr "ターミナルサーバクライアント - 再接続"
+
+#: ../src/tsc-manager.c:428
+#, c-format
+msgid "Connection '%s' failed"
+msgstr "接続 '%s' が失敗しました"
+
+#: ../src/tsc-manager.c:599
+#, c-format
+msgid "No connections specified"
+msgstr "接続が指定されていません"
+
+#: ../src/tsc-network.c:37
+msgid "Waiting For Network..."
+msgstr "ネットワークを待機しています..."
+
+#: ../src/tsc-network.c:39
+msgid "Continue Without Network"
+msgstr "ネットワークなしで続行"
+
+#: ../src/tsc-network.c:43
+msgid "<b>Waiting for network connection, standby...</b>"
+msgstr "<b>ネットワーク接続を待機しています。準備中です...</b>"
+
+#: ../src/tsc-window.c:181
+msgid "Manager"
+msgstr "マネージャ"
+
+#: ../src/tsc-window.c:182
+msgid "The TSCManager to use"
+msgstr "使用するTSCManager"
+
+#: ../src/tsc-window.c:189
+msgid "chooser"
+msgstr "セレクタ"
+
+#: ../src/tsc-window.c:190
+msgid "Whether or not the window should only be a chooser"
+msgstr "ウィンドウをセレクタのみにするかどうか"
+
+#: ../src/tsc-window.c:354
+msgid "Are you sure you want to remove the selected connections?  This operation cannot be reversed."
+msgstr "選択した接続を削除してもよろしいですか? この操作は元に戻せません。"
+
+#: ../src/tsc-window.c:466 ../src/tsc-window.c:491
+msgid "Choose Connection File"
+msgstr "接続ファイルの選択"
+
+#: ../src/tsc-window.c:573
+msgid "Remove Connection"
+msgstr "接続の削除"
+
+#: ../src/tsc-window.c:575
+msgid "Remove an existing connection"
+msgstr "既存の接続を削除します"
+
+#: ../src/tsc-window.c:583
+msgid "Edit an existing connection"
+msgstr "既存の接続を編集します"
+
+#: ../src/tsc-window.c:589
+msgid "Start Connection"
+msgstr "接続開始"
+
+#: ../src/tsc-window.c:591
+msgid "Start a previously configured connection"
+msgstr "既に設定済みの接続を開始します"
+
+#: ../src/tsc-window.c:597
+msgid "Export Connections"
+msgstr "接続のエクスポート"
+
+#: ../src/tsc-window.c:599
+msgid "Export connections to a file"
+msgstr "接続をファイルへエクスポートします"
+
+#: ../src/tsc-window.c:609
+msgid "Add Connection"
+msgstr "接続の追加"
+
+#: ../src/tsc-window.c:611
+msgid "Add a new connection"
+msgstr "新しい接続を追加します"
+
+#: ../src/tsc-window.c:617
+msgid "Import Connections"
+msgstr "接続のインポート"
+
+#: ../src/tsc-window.c:619
+msgid "Import connections from a file"
+msgstr "ファイルから接続をインポートします"
+
+#: ../src/tsc-window.c:625
+msgid "Quit"
+msgstr "終了"
+
+#: ../src/tsc-window.c:627
+msgid "Quit the application"
+msgstr "アプリケーションを終了します"
+
+#: ../src/tsc-window.c:747
+msgid "Terminal Server Client"
+msgstr "ターミナルサーバクライアント"
+
+#: ../src/tsc-main.c:36
+msgid "Start a previously created connection"
+msgstr "既に作成済みの接続を開始します"
+
+#: ../src/tsc-main.c:37
+msgid "name-or-file"
+msgstr "名前またはファイル"
+
+#: ../src/tsc-main.c:45
+msgid "Start a new connection from a URI"
+msgstr "URIから新しい接続を開始します"
+
+#: ../src/tsc-main.c:46
+msgid "uri"
+msgstr "URI"
+
+#: ../src/tsc-main.c:54
+msgid "List the configured connections"
+msgstr "設定済みの接続を一覧にします"
+
+#: ../src/tsc-main.c:63
+msgid "Start all connections configured for autostart"
+msgstr "自動開始に設定されている接続をすべて開始します"
+
+#: ../src/tsc-main.c:72
+msgid "Initiates a logout after all connections have ended"
+msgstr "すべての接続が終了したらログアウトを実行します"
+
+#: ../src/tsc-main.c:81
+msgid "Import a set of previously exported connections"
+msgstr "以前にエクスポートした接続のセットをインポートします"
+
+#: ../src/tsc-main.c:90
+msgid "Export all connections to specified file"
+msgstr "指定したファイルにすべての接続をエクスポートします"
+
+#: ../src/tsc-main.c:98
+msgid "Only show a connection chooser"
+msgstr "接続セレクタのみを表示します"
+
+#: ../src/tsc-main.c:106
+msgid "Configure and initiate connections to remote machines"
+msgstr "リモートマシンとの接続を設定および開始します"
+
+#: ../src/tsc-main.c:184
+msgid "Would you like to start automatically configured connections?"
+msgstr "設定済みの接続を自動的に開始しますか?"
+
+#: ../src/tsc-main.c:206
+#, c-format
+msgid "No connections are currently available.\n"
+msgstr "現在使用可能な接続はありません。\n"
+
+#: ../src/tsc-main.c:208
+#, c-format
+msgid "Available Connections:"
+msgstr "使用可能な接続:"
+
+#: ../src/tsc-main.c:258
+msgid "Unable to create connection"
+msgstr "接続を作成できません"
+
+#: ../src/tsc-main.c:259
+#, c-format
+msgid "Unable to handle URI '%s'"
+msgstr "URI '%s' を処理できません"
+
+#: ../src/tsc-main.c:311
+msgid "Unable to import connections"
+msgstr "接続をインポートできません"
+
+#: ../src/tsc-main.c:323
+msgid "Unable to export connections"
+msgstr "接続をエクスポートできません"
+
+#: ../src/plugins/default/tsc-generic-provider.c:35
+msgid "Custom Command"
+msgstr "カスタムコマンド"
+
+#: ../src/plugins/default/tsc-generic-provider.c:36
+msgid "Create a generic freeform connection"
+msgstr "汎用の自由形式の接続を作成します"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:37
+#, c-format
+msgid "RDP on %s"
+msgstr "%s 上のRDP"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:75
+msgid "Windows Terminal Service"
+msgstr "Windowsターミナルサービス"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:76
+msgid "Connect to Windows machines via Terminal Services"
+msgstr "ターミナルサービス経由でWindowsマシンに接続する"
+
+#: ../src/plugins/default/tsc-rdp-connection.c:49
+#, c-format
+msgid "Connected to '%s'"
+msgstr "'%s' に接続しました"
+
+#: ../src/plugins/default/tsc-rdp-connection.c:51
+#, c-format
+msgid "You are connected to '%s' in fullscreen mode.  Use Control+Alt+Enter to switch to and from windowed mode."
+msgstr "フルスクリーンモードで '%s' に接続しています。ウィンドウモードを切り替えるには、<Control>+<Alt>+<Enter>を押します。"
+
+#: ../src/plugins/default/tsc-generic-edit-dialog.c:66
+msgid "Command is a required field"
+msgstr "コマンドは必須フィールドです"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:218
+msgid "Host is a required field"
+msgstr "ホストは必須フィールドです"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:223
+msgid "User is a required field"
+msgstr "ユーザは必須フィールドです"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:228
+msgid "Password is a required field"
+msgstr "パスワードは必須フィールドです"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:233
+msgid "Domain is a required field"
+msgstr "ドメインは必須フィールドです"
+
+#: ../src/tsc-connection.c:90
+msgid "New Connection"
+msgstr "新規接続"
+
+#: ../src/tsc-connection.c:170
+#, c-format
+msgid "Network connection is not available."
+msgstr "ネットワーク接続が使用できません。"
+
+#: ../src/tsc-connection.c:521
+msgid "Failed to Save"
+msgstr "保存できませんでした"
+
+#: ../src/tsc-connection.c:521
+msgid "Failed to save places.xbel"
+msgstr "places.xbelを保存できませんでした"
+

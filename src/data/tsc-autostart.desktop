@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Terminal Server Client Autostart
+Comment=Setup and initiate remote connections at login
+Exec=tsclient --autostart
+Icon=gnome-computer
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Application;Network;

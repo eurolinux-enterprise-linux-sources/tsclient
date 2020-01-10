@@ -1,0 +1,329 @@
+# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
+# This file is distributed under the same license as the package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tsclient\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-11 15:30+0200\n"
+"PO-Revision-Date: 2008-07-14 15:33\n"
+"Last-Translator: Novell Language <language@novell.com>\n"
+"Language-Team: Novell Language <language@novell.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/tsc-edit-dialog.c:189
+msgid "<b>This connection must have a name</b>"
+msgstr "<b>Deze verbinding moet een naam hebben</b>"
+
+#: ../src/tsc-edit-dialog.c:261
+msgid "Connection"
+msgstr "Verbinding"
+
+#: ../src/tsc-edit-dialog.c:262
+msgid "The TSCConnection to edit"
+msgstr "De TSCConnection die moet worden bewerkt"
+
+#: ../src/tsc-edit-dialog.c:279 ../src/tsc-window.c:581
+msgid "Edit Connection"
+msgstr "Verbinding bewerken"
+
+#: ../src/tsc-util.c:32
+#, c-format
+msgid "ERROR: %s: %s\n"
+msgstr "Fout: %s: %s\n"
+
+#: ../src/tsc-util.c:40
+msgid "Terminal Server Client - Error"
+msgstr "Terminal Server Client - Fout"
+
+#: ../src/tsc-util.c:52 ../src/tsc-manager.c:641 ../src/tsc-manager.c:681
+#: ../src/tsc-main.c:312 ../src/tsc-main.c:324
+#, c-format
+msgid "Unknown Error"
+msgstr "Onbekende fout"
+
+#: ../src/tsc-util.c:58
+#, c-format
+msgid "Child process crashed"
+msgstr "Onderliggend proces gecrasht"
+
+#: ../src/tsc-util.c:61
+#, c-format
+msgid "Child terminated by signal"
+msgstr "Onderliggend item beëindigd door signaal"
+
+#: ../src/tsc-manager.c:208
+#, c-format
+msgid "Failed to load connection file '%s': %s"
+msgstr "Kan verbindingsbestand %s niet laden: %s"
+
+#: ../src/tsc-manager.c:209
+msgid "Unknown Error."
+msgstr "Onbekende fout."
+
+#: ../src/tsc-manager.c:217
+#, c-format
+msgid "Failed to load connection file '%s': No provider specified."
+msgstr "Kan verbindingsbestand %s niet laden: geen provider opgegeven."
+
+#: ../src/tsc-manager.c:225
+#, c-format
+msgid "Failed to load connection file '%s': Provider '%s' is not available."
+msgstr "Kan verbindingsbestand %s niet laden: provider %s is niet beschikbaar."
+
+#: ../src/tsc-manager.c:400
+#, c-format
+msgid "<span weight=\"bold\">Reconnect to '%s'?</span>\n\nYou have been unexpectedly disconnected from '%s'.  Would you like to reconnect?\n\n<i>%s</i>"
+msgstr "<span weight=\"bold\">Opnieuw verbinding maken met %s?</span>\n\nDe verbinding met %s is onverwacht verbroken. Wilt u opnieuw verbinding maken?\n\n<i>%s</i>"
+
+#: ../src/tsc-manager.c:404
+msgid "Terminal Server Client - Reconnect"
+msgstr "Terminal Server Client - Opnieuw verbinding maken"
+
+#: ../src/tsc-manager.c:428
+#, c-format
+msgid "Connection '%s' failed"
+msgstr "Verbinding %s mislukt"
+
+#: ../src/tsc-manager.c:599
+#, c-format
+msgid "No connections specified"
+msgstr "Geen verbindingen opgegeven"
+
+#: ../src/tsc-network.c:37
+msgid "Waiting For Network..."
+msgstr "Wachten op netwerk..."
+
+#: ../src/tsc-network.c:39
+msgid "Continue Without Network"
+msgstr "Doorgaan zonder netwerk"
+
+#: ../src/tsc-network.c:43
+msgid "<b>Waiting for network connection, standby...</b>"
+msgstr "<b>Wachten op netwerkverbinding, een ogenblik geduld...</b>"
+
+#: ../src/tsc-window.c:181
+msgid "Manager"
+msgstr "Beheerder"
+
+#: ../src/tsc-window.c:182
+msgid "The TSCManager to use"
+msgstr "De TSCManager die moet worden gebruikt"
+
+#: ../src/tsc-window.c:189
+msgid "chooser"
+msgstr "kiezer"
+
+#: ../src/tsc-window.c:190
+msgid "Whether or not the window should only be a chooser"
+msgstr "Of het venster alleen een kiezer moet zijn"
+
+#: ../src/tsc-window.c:354
+msgid "Are you sure you want to remove the selected connections?  This operation cannot be reversed."
+msgstr "Weet u zeker dat u de geselecteerde verbindingen wilt verwijderen? Deze bewerking kan niet ongedaan gemaakt worden."
+
+#: ../src/tsc-window.c:466 ../src/tsc-window.c:491
+msgid "Choose Connection File"
+msgstr "Verbindingsbestand selecteren"
+
+#: ../src/tsc-window.c:573
+msgid "Remove Connection"
+msgstr "Verbinding verwijderen"
+
+#: ../src/tsc-window.c:575
+msgid "Remove an existing connection"
+msgstr "Bestaande verbinding verwijderen"
+
+#: ../src/tsc-window.c:583
+msgid "Edit an existing connection"
+msgstr "Bestaande verbinding bewerken"
+
+#: ../src/tsc-window.c:589
+msgid "Start Connection"
+msgstr "Verbinding starten"
+
+#: ../src/tsc-window.c:591
+msgid "Start a previously configured connection"
+msgstr "Eerder geconfigureerde verbinding starten"
+
+#: ../src/tsc-window.c:597
+msgid "Export Connections"
+msgstr "Verbindingen exporteren"
+
+#: ../src/tsc-window.c:599
+msgid "Export connections to a file"
+msgstr "Verbindingen exporteren naar een bestand"
+
+#: ../src/tsc-window.c:609
+msgid "Add Connection"
+msgstr "Verbinding toevoegen"
+
+#: ../src/tsc-window.c:611
+msgid "Add a new connection"
+msgstr "Nieuwe verbinding toevoegen"
+
+#: ../src/tsc-window.c:617
+msgid "Import Connections"
+msgstr "Verbindingen importeren"
+
+#: ../src/tsc-window.c:619
+msgid "Import connections from a file"
+msgstr "Verbindingen importeren vanuit een bestand"
+
+#: ../src/tsc-window.c:625
+msgid "Quit"
+msgstr "Afsluiten"
+
+#: ../src/tsc-window.c:627
+msgid "Quit the application"
+msgstr "De toepassing sluiten"
+
+#: ../src/tsc-window.c:747
+msgid "Terminal Server Client"
+msgstr "Terminal Server Client"
+
+#: ../src/tsc-main.c:36
+msgid "Start a previously created connection"
+msgstr "Eerder gemaakte verbinding starten"
+
+#: ../src/tsc-main.c:37
+msgid "name-or-file"
+msgstr "naam-of-bestand"
+
+#: ../src/tsc-main.c:45
+msgid "Start a new connection from a URI"
+msgstr "Nieuwe verbinding starten vanaf een URI"
+
+#: ../src/tsc-main.c:46
+msgid "uri"
+msgstr "uri"
+
+#: ../src/tsc-main.c:54
+msgid "List the configured connections"
+msgstr "Geconfigureerde verbindingen weergeven"
+
+#: ../src/tsc-main.c:63
+msgid "Start all connections configured for autostart"
+msgstr "Alle verbindingen die zijn geconfigureerd voor autostart starten"
+
+#: ../src/tsc-main.c:72
+msgid "Initiates a logout after all connections have ended"
+msgstr "Hiermee wordt u afgemeld nadat alle verbindingen zijn beëindigd"
+
+#: ../src/tsc-main.c:81
+msgid "Import a set of previously exported connections"
+msgstr "Een set eerder geëxporteerde verbindingen importeren"
+
+#: ../src/tsc-main.c:90
+msgid "Export all connections to specified file"
+msgstr "Alle verbindingen exporteren naar een opgegeven bestand"
+
+#: ../src/tsc-main.c:98
+msgid "Only show a connection chooser"
+msgstr "Alleen een verbindingskiezer weergeven"
+
+#: ../src/tsc-main.c:106
+msgid "Configure and initiate connections to remote machines"
+msgstr "Verbindingen met externe apparaten configureren en initialiseren"
+
+#: ../src/tsc-main.c:184
+msgid "Would you like to start automatically configured connections?"
+msgstr "Wilt u automatisch geconfigureerde verbindingen starten?"
+
+#: ../src/tsc-main.c:206
+#, c-format
+msgid "No connections are currently available.\n"
+msgstr "Er zijn momenteel geen verbindingen beschikbaar.\n"
+
+#: ../src/tsc-main.c:208
+#, c-format
+msgid "Available Connections:"
+msgstr "Beschikbare verbindingen:"
+
+#: ../src/tsc-main.c:258
+msgid "Unable to create connection"
+msgstr "Kan geen verbinding maken"
+
+#: ../src/tsc-main.c:259
+#, c-format
+msgid "Unable to handle URI '%s'"
+msgstr "Kan URI %s niet verwerken"
+
+#: ../src/tsc-main.c:311
+msgid "Unable to import connections"
+msgstr "Kan verbindingen niet importeren"
+
+#: ../src/tsc-main.c:323
+msgid "Unable to export connections"
+msgstr "Kan verbindingen niet exporteren"
+
+#: ../src/plugins/default/tsc-generic-provider.c:35
+msgid "Custom Command"
+msgstr "Aangepaste opdracht"
+
+#: ../src/plugins/default/tsc-generic-provider.c:36
+msgid "Create a generic freeform connection"
+msgstr "Algemene verbinding met vrije vorm maken"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:37
+#, c-format
+msgid "RDP on %s"
+msgstr "RDP op %s"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:75
+msgid "Windows Terminal Service"
+msgstr "Windows Terminal Service"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:76
+msgid "Connect to Windows machines via Terminal Services"
+msgstr "Verbinding maken met Windows-apparaten via Terminal Services"
+
+#: ../src/plugins/default/tsc-rdp-connection.c:49
+#, c-format
+msgid "Connected to '%s'"
+msgstr "Verbonden met %s"
+
+#: ../src/plugins/default/tsc-rdp-connection.c:51
+#, c-format
+msgid "You are connected to '%s' in fullscreen mode.  Use Control+Alt+Enter to switch to and from windowed mode."
+msgstr "U hebt verbinding met %s in de modus voor volledig scherm. Schakel met Control+Alt+Enter de venstermodus in en uit."
+
+#: ../src/plugins/default/tsc-generic-edit-dialog.c:66
+msgid "Command is a required field"
+msgstr "Opdracht is een vereist veld"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:218
+msgid "Host is a required field"
+msgstr "Host is een vereist veld"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:223
+msgid "User is a required field"
+msgstr "Gebruiker is een vereist veld"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:228
+msgid "Password is a required field"
+msgstr "Wachtwoord is een vereist veld"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:233
+msgid "Domain is a required field"
+msgstr "Domein is een vereist veld"
+
+#: ../src/tsc-connection.c:90
+msgid "New Connection"
+msgstr "Nieuwe verbinding"
+
+#: ../src/tsc-connection.c:170
+#, c-format
+msgid "Network connection is not available."
+msgstr "Netwerkverbinding is niet beschikbaar."
+
+#: ../src/tsc-connection.c:521
+msgid "Failed to Save"
+msgstr "Opslaan is mislukt"
+
+#: ../src/tsc-connection.c:521
+msgid "Failed to save places.xbel"
+msgstr "Kan places.xbel niet opslaan"
+

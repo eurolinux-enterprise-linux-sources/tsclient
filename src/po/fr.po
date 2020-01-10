@@ -1,0 +1,329 @@
+# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
+# This file is distributed under the same license as the package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tsclient\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-11 15:30+0200\n"
+"PO-Revision-Date: 2008-07-14 15:31\n"
+"Last-Translator: Novell Language <language@novell.com>\n"
+"Language-Team: Novell Language <language@novell.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/tsc-edit-dialog.c:189
+msgid "<b>This connection must have a name</b>"
+msgstr "<b>Cette connexion doit avoir un nom</b>"
+
+#: ../src/tsc-edit-dialog.c:261
+msgid "Connection"
+msgstr "Connexion"
+
+#: ../src/tsc-edit-dialog.c:262
+msgid "The TSCConnection to edit"
+msgstr "La connexion TSC à modifier"
+
+#: ../src/tsc-edit-dialog.c:279 ../src/tsc-window.c:581
+msgid "Edit Connection"
+msgstr "Modifier la connexion"
+
+#: ../src/tsc-util.c:32
+#, c-format
+msgid "ERROR: %s: %s\n"
+msgstr "ERREUR : %s : %s\n"
+
+#: ../src/tsc-util.c:40
+msgid "Terminal Server Client - Error"
+msgstr "Client Terminal Serveur - Erreur"
+
+#: ../src/tsc-util.c:52 ../src/tsc-manager.c:641 ../src/tsc-manager.c:681
+#: ../src/tsc-main.c:312 ../src/tsc-main.c:324
+#, c-format
+msgid "Unknown Error"
+msgstr "Erreur inconnue"
+
+#: ../src/tsc-util.c:58
+#, c-format
+msgid "Child process crashed"
+msgstr "Processus enfant défaillant"
+
+#: ../src/tsc-util.c:61
+#, c-format
+msgid "Child terminated by signal"
+msgstr "Enfant terminé au signal"
+
+#: ../src/tsc-manager.c:208
+#, c-format
+msgid "Failed to load connection file '%s': %s"
+msgstr "Échec du chargement du fichier de connexion '%s' : %s"
+
+#: ../src/tsc-manager.c:209
+msgid "Unknown Error."
+msgstr "Erreur inconnue."
+
+#: ../src/tsc-manager.c:217
+#, c-format
+msgid "Failed to load connection file '%s': No provider specified."
+msgstr "Échec du chargement du fichier de connexion '%s' : pas de fournisseur spécifié."
+
+#: ../src/tsc-manager.c:225
+#, c-format
+msgid "Failed to load connection file '%s': Provider '%s' is not available."
+msgstr "Échec du chargement du fichier de connexion '%s' : le fournisseur '%s' n'est pas disponible."
+
+#: ../src/tsc-manager.c:400
+#, c-format
+msgid "<span weight=\"bold\">Reconnect to '%s'?</span>\n\nYou have been unexpectedly disconnected from '%s'.  Would you like to reconnect?\n\n<i>%s</i>"
+msgstr "<span weight=\"bold\">Se reconnecter à '%s' ?</span>\n\nVous avez été malencontreusement déconnecté de '%s'. Voulez-vous vous reconnecter ?\n\n<i>%s</i>"
+
+#: ../src/tsc-manager.c:404
+msgid "Terminal Server Client - Reconnect"
+msgstr "Client Terminal Server - Se reconnecter"
+
+#: ../src/tsc-manager.c:428
+#, c-format
+msgid "Connection '%s' failed"
+msgstr "Échec de la connexion '%s'"
+
+#: ../src/tsc-manager.c:599
+#, c-format
+msgid "No connections specified"
+msgstr "Aucune connexion spécifiée"
+
+#: ../src/tsc-network.c:37
+msgid "Waiting For Network..."
+msgstr "En attente du réseau..."
+
+#: ../src/tsc-network.c:39
+msgid "Continue Without Network"
+msgstr "Continuer sans réseau"
+
+#: ../src/tsc-network.c:43
+msgid "<b>Waiting for network connection, standby...</b>"
+msgstr "<b>En attente de la connexion réseau, mise en attente...</b>"
+
+#: ../src/tsc-window.c:181
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#: ../src/tsc-window.c:182
+msgid "The TSCManager to use"
+msgstr "Le gestionnaire TSC à utiliser"
+
+#: ../src/tsc-window.c:189
+msgid "chooser"
+msgstr "sélecteur"
+
+#: ../src/tsc-window.c:190
+msgid "Whether or not the window should only be a chooser"
+msgstr "Définit si la fenêtre doit uniquement être un sélecteur"
+
+#: ../src/tsc-window.c:354
+msgid "Are you sure you want to remove the selected connections?  This operation cannot be reversed."
+msgstr "Êtes-vous sûr de vouloir supprimer les connexions sélectionnées ? Cette opération est irréversible."
+
+#: ../src/tsc-window.c:466 ../src/tsc-window.c:491
+msgid "Choose Connection File"
+msgstr "Choisir le fichier de connexion"
+
+#: ../src/tsc-window.c:573
+msgid "Remove Connection"
+msgstr "Supprimer la connexion"
+
+#: ../src/tsc-window.c:575
+msgid "Remove an existing connection"
+msgstr "Supprimer une connexion existante"
+
+#: ../src/tsc-window.c:583
+msgid "Edit an existing connection"
+msgstr "Modifier une connexion existante"
+
+#: ../src/tsc-window.c:589
+msgid "Start Connection"
+msgstr "Démarrer la connexion"
+
+#: ../src/tsc-window.c:591
+msgid "Start a previously configured connection"
+msgstr "Démarrer une connexion configurée précédemment"
+
+#: ../src/tsc-window.c:597
+msgid "Export Connections"
+msgstr "Exporter les connexions"
+
+#: ../src/tsc-window.c:599
+msgid "Export connections to a file"
+msgstr "Exporter les connexions vers un fichier"
+
+#: ../src/tsc-window.c:609
+msgid "Add Connection"
+msgstr "Ajouter la connexion"
+
+#: ../src/tsc-window.c:611
+msgid "Add a new connection"
+msgstr "Ajouter une nouvelle connexion"
+
+#: ../src/tsc-window.c:617
+msgid "Import Connections"
+msgstr "Importer les connexions"
+
+#: ../src/tsc-window.c:619
+msgid "Import connections from a file"
+msgstr "Importer les connexions à partir d'un fichier"
+
+#: ../src/tsc-window.c:625
+msgid "Quit"
+msgstr "Quitter"
+
+#: ../src/tsc-window.c:627
+msgid "Quit the application"
+msgstr "Quitter l'application"
+
+#: ../src/tsc-window.c:747
+msgid "Terminal Server Client"
+msgstr "Client Terminal Server"
+
+#: ../src/tsc-main.c:36
+msgid "Start a previously created connection"
+msgstr "Démarrer une connexion créée précédemment"
+
+#: ../src/tsc-main.c:37
+msgid "name-or-file"
+msgstr "nom-ou-fichier"
+
+#: ../src/tsc-main.c:45
+msgid "Start a new connection from a URI"
+msgstr "Démarrer une nouvelle connexion à partir d'une URI"
+
+#: ../src/tsc-main.c:46
+msgid "uri"
+msgstr "uri"
+
+#: ../src/tsc-main.c:54
+msgid "List the configured connections"
+msgstr "Répertorier les connexions configurées"
+
+#: ../src/tsc-main.c:63
+msgid "Start all connections configured for autostart"
+msgstr "Démarrer toutes les connexions configurées pour démarrage automatique"
+
+#: ../src/tsc-main.c:72
+msgid "Initiates a logout after all connections have ended"
+msgstr "Initie un logout une fois toutes les connexions terminées"
+
+#: ../src/tsc-main.c:81
+msgid "Import a set of previously exported connections"
+msgstr "Importer un ensemble de connexions précédemment exportées"
+
+#: ../src/tsc-main.c:90
+msgid "Export all connections to specified file"
+msgstr "Exporter toutes les connexions vers un fichier spécifié"
+
+#: ../src/tsc-main.c:98
+msgid "Only show a connection chooser"
+msgstr "Afficher uniquement un sélecteur de connexion"
+
+#: ../src/tsc-main.c:106
+msgid "Configure and initiate connections to remote machines"
+msgstr "Configurer et initier les connexions vers des machines distantes"
+
+#: ../src/tsc-main.c:184
+msgid "Would you like to start automatically configured connections?"
+msgstr "Voulez-vous démarrer automatiquement les connexions configurées ?"
+
+#: ../src/tsc-main.c:206
+#, c-format
+msgid "No connections are currently available.\n"
+msgstr "Aucune connexion n'est actuellement disponible.\n"
+
+#: ../src/tsc-main.c:208
+#, c-format
+msgid "Available Connections:"
+msgstr "Connexions disponibles :"
+
+#: ../src/tsc-main.c:258
+msgid "Unable to create connection"
+msgstr "Impossible de créer la connexion"
+
+#: ../src/tsc-main.c:259
+#, c-format
+msgid "Unable to handle URI '%s'"
+msgstr "Impossible de gérer l'URI '%s'"
+
+#: ../src/tsc-main.c:311
+msgid "Unable to import connections"
+msgstr "Impossible d'importer les connexions"
+
+#: ../src/tsc-main.c:323
+msgid "Unable to export connections"
+msgstr "Impossible d'exporter les connexions"
+
+#: ../src/plugins/default/tsc-generic-provider.c:35
+msgid "Custom Command"
+msgstr "Commande personnalisée"
+
+#: ../src/plugins/default/tsc-generic-provider.c:36
+msgid "Create a generic freeform connection"
+msgstr "Créer une connexion générique en structure libre"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:37
+#, c-format
+msgid "RDP on %s"
+msgstr "RDP sur %s"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:75
+msgid "Windows Terminal Service"
+msgstr "Windows Terminal Service"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:76
+msgid "Connect to Windows machines via Terminal Services"
+msgstr "Se connecter à des machines Windows via des services de terminal"
+
+#: ../src/plugins/default/tsc-rdp-connection.c:49
+#, c-format
+msgid "Connected to '%s'"
+msgstr "Connecté à '%s'"
+
+#: ../src/plugins/default/tsc-rdp-connection.c:51
+#, c-format
+msgid "You are connected to '%s' in fullscreen mode.  Use Control+Alt+Enter to switch to and from windowed mode."
+msgstr "Vous êtes connecté à '%s' en mode plein écran. Utilisez Ctrl+Alt+Entrée pour basculer entre ce mode et le mode fenêtre."
+
+#: ../src/plugins/default/tsc-generic-edit-dialog.c:66
+msgid "Command is a required field"
+msgstr "Commande est un champs requis"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:218
+msgid "Host is a required field"
+msgstr "Hôte est un champ requis"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:223
+msgid "User is a required field"
+msgstr "Utilisateur est un champ requis"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:228
+msgid "Password is a required field"
+msgstr "Mot de passe est un champs requis"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:233
+msgid "Domain is a required field"
+msgstr "Domaine est un champ requis"
+
+#: ../src/tsc-connection.c:90
+msgid "New Connection"
+msgstr "Nouvelle connexion"
+
+#: ../src/tsc-connection.c:170
+#, c-format
+msgid "Network connection is not available."
+msgstr "Connexion réseau indisponible."
+
+#: ../src/tsc-connection.c:521
+msgid "Failed to Save"
+msgstr "Échec de la sauvegarde"
+
+#: ../src/tsc-connection.c:521
+msgid "Failed to save places.xbel"
+msgstr "Échec de la sauvegarde de places.xbel"
+

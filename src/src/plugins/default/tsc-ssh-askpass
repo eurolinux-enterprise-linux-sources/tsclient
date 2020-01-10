@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ -z "$TSC_USER" ] || [ -z "$TSC_CONNECTION_FILE" ]; then
+	echo "TSC_USER and TSC_CONNECTION_NAME must be set" >&2
+	exit 1
+fi
+
+PASSWORD=""
+if [ -f "$TSC_CONNECTION_FILE" ]; then
+	PASSWORD=`grep password_line $TSC_CONNECTION_FILE | cut -d = -f 2`
+fi
+
+if [ -n "$PASSWORD" ]; then 
+	echo "$PASSWORD"
+	exit 0
+elif [ -n "$OLD_SSH_ASKPASS" ]; then
+	# prefer ssh-askpass over others
+	BASEDIR=`dirname $OLD_SSH_ASKPASS`
+	if [ -f "$BASEDIR/ssh-askpass" ]; then
+		exec "$BASEDIR/ssh-askpass"
+	else
+		exec "$OLD_SSH_ASKPASS"
+	fi
+fi
+
+exit 1

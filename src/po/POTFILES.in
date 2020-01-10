@@ -1,0 +1,17 @@
+src/tsc-edit-dialog.c
+src/tsc-util.c
+src/tsc-manager.c
+src/tsc-network.c
+src/tsc-window.c
+src/tsc-provider.c
+src/tsc-connection-model.c
+src/tsc-main.c
+src/tsc-marshal.c
+src/plugins/default/tsc-generic-provider.c
+src/plugins/default/tsc-rdp-provider.c
+src/plugins/default/tsc-generic-connection.c
+src/plugins/default/tsc-rdp-connection.c
+src/plugins/default/tsc-default.c
+src/plugins/default/tsc-generic-edit-dialog.c
+src/plugins/default/tsc-rdp-edit-dialog.c
+src/tsc-connection.c

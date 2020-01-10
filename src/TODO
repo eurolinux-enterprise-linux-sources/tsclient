@@ -1,0 +1,66 @@
+
+- Add more providers
+
+    [VNC]
+    - Done, uses vncviewer
+    - Should consider using vinagre if available.  Could show
+      the vinagre connections in the main window, perhaps?  For those,
+      the 'edit' selection would show the appropriate vinagre UI.  May need
+      some vinagre changes to do what we want.
+
+    [ICA]
+    - At a minimum, needs to support 'wfica <file>', where <file> is an
+      existing ICA connection file.  I don't know what is possible
+      beyond that. [DONE, pulls out connections configured via wfcmgr]
+
+    [SSH]
+    - Should offer standard options (host, username, password, etc).
+    - Option to run in terminal window -- should generalize that bit
+      to allow sharing code with the 'generic' provider.
+    - Option to forward X11
+    - Would be really cool if we could discover applications on the remote
+      machine and offer a list, instead of making people type in the actual
+      command they want to run (in the case of a non-shell usage)
+    - Add some stuff for non-user/pass authentication.  SSH supports a lot, so
+      not sure how much should be exposed.
+
+    [Xnest+XDMCP]
+    - Think of a better name for this ("Remote X11"?)
+    - Pretty straightforward, just need to specify the host and
+      window geometry.  Should prefer Xephyr over Xnest if available.
+
+    [3270 Emulator]
+    - x3270 seems to be the thing to use here.  It supports a ton of
+      different options, unsure which things should actually be exposed.
+      Should try to support Ericom product too, since a lot of people
+      use that.
+
+    [Web Browser]
+    - I think only supporting firefox is ok here.  That way it's not so
+    difficult to add options like 'kiosk mode', since all the hackery only
+    needs to be done for one browser.
+
+- Try to use libsn to create a connection startup splash screen.  This will
+  be very useful on slow thin client machines, as some apps (firefox) take
+  a *very* long time to start.  Probably similar to what gnome-desktop does
+  when launching desktop items, but with a splash screen instead of just
+  a spinning cursor.
+
+- Add drive/printer/sound mapping stuff to TSCRdpConnection.  In the short
+  term, it might be ok to just choose sane defaults and not offer much UI
+  for manipulating that stuff.  Map $(HOME), fwd all printers, and fwd sound,
+  for instance.
+
+- Implement drag-and-drop in the icon view.  You should be able to drag
+  to the panel or computer menu to create a connection launcher. [DONE]
+
+- Make the connection import/export more robust.  A provider should be
+  allowed to add extra files into the archive, since there may be extra
+  data associated with connections of that type.
+
+- Investigate using libarchive for import/export of connections.  SLE10 (and
+  presumably other older distributions) does not have it, but maybe a
+  workable solution could be found.  It would certainly be much better than
+  forking tar/gzip.
+
+- General UI love, especially for main connection screen.

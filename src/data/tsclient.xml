@@ -1,0 +1,14 @@
+<ui>
+    <popup name="MainPopup">
+        <menuitem name="AddConnection" action="AddConnectionAction"/>
+        <separator />
+        <menuitem name="StartConnection" action="StartConnectionAction"/>
+        <menuitem name="EditConnection" action="EditConnectionAction"/>
+        <menuitem name="RemoveConnection" action="RemoveConnectionAction"/>
+        <separator/>
+        <menuitem name="ImportConnections" action="ImportConnectionsAction"/>
+        <menuitem name="ExportConnections" action="ExportConnectionsAction"/>
+        <separator />
+        <menuitem name="Quit" action="QuitAction"/>
+    </popup>
+</ui>

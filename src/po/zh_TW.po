@@ -1,0 +1,329 @@
+# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
+# This file is distributed under the same license as the package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tsclient\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-11 15:30+0200\n"
+"PO-Revision-Date: 2008-07-14 15:33\n"
+"Last-Translator: Novell Language <language@novell.com>\n"
+"Language-Team: Novell Language <language@novell.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/tsc-edit-dialog.c:189
+msgid "<b>This connection must have a name</b>"
+msgstr "<b>此連線必須有名稱</b>"
+
+#: ../src/tsc-edit-dialog.c:261
+msgid "Connection"
+msgstr "連線"
+
+#: ../src/tsc-edit-dialog.c:262
+msgid "The TSCConnection to edit"
+msgstr "要編輯的 TSCConnection"
+
+#: ../src/tsc-edit-dialog.c:279 ../src/tsc-window.c:581
+msgid "Edit Connection"
+msgstr "編輯連線"
+
+#: ../src/tsc-util.c:32
+#, c-format
+msgid "ERROR: %s: %s\n"
+msgstr "錯誤：%s︰%s\n"
+
+#: ../src/tsc-util.c:40
+msgid "Terminal Server Client - Error"
+msgstr "終端機伺服器用戶端 - 錯誤"
+
+#: ../src/tsc-util.c:52 ../src/tsc-manager.c:641 ../src/tsc-manager.c:681
+#: ../src/tsc-main.c:312 ../src/tsc-main.c:324
+#, c-format
+msgid "Unknown Error"
+msgstr "未知的錯誤"
+
+#: ../src/tsc-util.c:58
+#, c-format
+msgid "Child process crashed"
+msgstr "子程序已當機"
+
+#: ../src/tsc-util.c:61
+#, c-format
+msgid "Child terminated by signal"
+msgstr "訊號已終止子程序"
+
+#: ../src/tsc-manager.c:208
+#, c-format
+msgid "Failed to load connection file '%s': %s"
+msgstr "無法載入連線檔案「%s」︰%s"
+
+#: ../src/tsc-manager.c:209
+msgid "Unknown Error."
+msgstr "未知的錯誤。"
+
+#: ../src/tsc-manager.c:217
+#, c-format
+msgid "Failed to load connection file '%s': No provider specified."
+msgstr "無法載入連線檔案「%s」︰未指定提供者。"
+
+#: ../src/tsc-manager.c:225
+#, c-format
+msgid "Failed to load connection file '%s': Provider '%s' is not available."
+msgstr "無法載入連線檔案「%s」︰提供者「%s」不可用。"
+
+#: ../src/tsc-manager.c:400
+#, c-format
+msgid "<span weight=\"bold\">Reconnect to '%s'?</span>\n\nYou have been unexpectedly disconnected from '%s'.  Would you like to reconnect?\n\n<i>%s</i>"
+msgstr "<span weight=\"bold\">重新連接至「%s」？</span>\n\n您與「%s」的連線已意外中斷。是否要重新連接？\n\n<i>%s</i>"
+
+#: ../src/tsc-manager.c:404
+msgid "Terminal Server Client - Reconnect"
+msgstr "終端機伺服器客戶端 - 重新連接"
+
+#: ../src/tsc-manager.c:428
+#, c-format
+msgid "Connection '%s' failed"
+msgstr "連線 '%s' 失敗"
+
+#: ../src/tsc-manager.c:599
+#, c-format
+msgid "No connections specified"
+msgstr "未指定連線"
+
+#: ../src/tsc-network.c:37
+msgid "Waiting For Network..."
+msgstr "正在等待網路..."
+
+#: ../src/tsc-network.c:39
+msgid "Continue Without Network"
+msgstr "不透過網路繼續"
+
+#: ../src/tsc-network.c:43
+msgid "<b>Waiting for network connection, standby...</b>"
+msgstr "<b>正在等待網路連線，待機中...</b>"
+
+#: ../src/tsc-window.c:181
+msgid "Manager"
+msgstr "管理員"
+
+#: ../src/tsc-window.c:182
+msgid "The TSCManager to use"
+msgstr "要使用的 TSCManager"
+
+#: ../src/tsc-window.c:189
+msgid "chooser"
+msgstr "選擇器"
+
+#: ../src/tsc-window.c:190
+msgid "Whether or not the window should only be a chooser"
+msgstr "視窗是否僅作為選擇器"
+
+#: ../src/tsc-window.c:354
+msgid "Are you sure you want to remove the selected connections?  This operation cannot be reversed."
+msgstr "確定要移除所選的連線嗎？此作業無法復原。"
+
+#: ../src/tsc-window.c:466 ../src/tsc-window.c:491
+msgid "Choose Connection File"
+msgstr "選擇連線檔案"
+
+#: ../src/tsc-window.c:573
+msgid "Remove Connection"
+msgstr "移除連線"
+
+#: ../src/tsc-window.c:575
+msgid "Remove an existing connection"
+msgstr "移除現有連線"
+
+#: ../src/tsc-window.c:583
+msgid "Edit an existing connection"
+msgstr "編輯現有連線"
+
+#: ../src/tsc-window.c:589
+msgid "Start Connection"
+msgstr "啟動連線"
+
+#: ../src/tsc-window.c:591
+msgid "Start a previously configured connection"
+msgstr "啟動先前設定的連線"
+
+#: ../src/tsc-window.c:597
+msgid "Export Connections"
+msgstr "輸出連線"
+
+#: ../src/tsc-window.c:599
+msgid "Export connections to a file"
+msgstr "將連線輸出至檔案"
+
+#: ../src/tsc-window.c:609
+msgid "Add Connection"
+msgstr "新增連線"
+
+#: ../src/tsc-window.c:611
+msgid "Add a new connection"
+msgstr "新增新的連線"
+
+#: ../src/tsc-window.c:617
+msgid "Import Connections"
+msgstr "輸入連線"
+
+#: ../src/tsc-window.c:619
+msgid "Import connections from a file"
+msgstr "從檔案中輸入連線"
+
+#: ../src/tsc-window.c:625
+msgid "Quit"
+msgstr "結束"
+
+#: ../src/tsc-window.c:627
+msgid "Quit the application"
+msgstr "結束應用程式"
+
+#: ../src/tsc-window.c:747
+msgid "Terminal Server Client"
+msgstr "終端機伺服器客戶端"
+
+#: ../src/tsc-main.c:36
+msgid "Start a previously created connection"
+msgstr "啟動先前建立的連線"
+
+#: ../src/tsc-main.c:37
+msgid "name-or-file"
+msgstr "名稱-或-檔案"
+
+#: ../src/tsc-main.c:45
+msgid "Start a new connection from a URI"
+msgstr "透過 URI 啟動新連線"
+
+#: ../src/tsc-main.c:46
+msgid "uri"
+msgstr "URI"
+
+#: ../src/tsc-main.c:54
+msgid "List the configured connections"
+msgstr "列出設定的連線"
+
+#: ../src/tsc-main.c:63
+msgid "Start all connections configured for autostart"
+msgstr "啟動設定為自動啟動的所有連線"
+
+#: ../src/tsc-main.c:72
+msgid "Initiates a logout after all connections have ended"
+msgstr "所有連線結束後啟始化登出"
+
+#: ../src/tsc-main.c:81
+msgid "Import a set of previously exported connections"
+msgstr "輸入一組先前輸出的連線"
+
+#: ../src/tsc-main.c:90
+msgid "Export all connections to specified file"
+msgstr "將所有連線輸出至指定檔案"
+
+#: ../src/tsc-main.c:98
+msgid "Only show a connection chooser"
+msgstr "僅顯示連線選擇器"
+
+#: ../src/tsc-main.c:106
+msgid "Configure and initiate connections to remote machines"
+msgstr "設定並啟動與遠端機器的連線"
+
+#: ../src/tsc-main.c:184
+msgid "Would you like to start automatically configured connections?"
+msgstr "是否要自動啟動設定的連線？"
+
+#: ../src/tsc-main.c:206
+#, c-format
+msgid "No connections are currently available.\n"
+msgstr "目前沒有可用的連線。\n"
+
+#: ../src/tsc-main.c:208
+#, c-format
+msgid "Available Connections:"
+msgstr "可用的連線︰"
+
+#: ../src/tsc-main.c:258
+msgid "Unable to create connection"
+msgstr "無法建立連線"
+
+#: ../src/tsc-main.c:259
+#, c-format
+msgid "Unable to handle URI '%s'"
+msgstr "無法處理 URI「%s」"
+
+#: ../src/tsc-main.c:311
+msgid "Unable to import connections"
+msgstr "無法輸入連線"
+
+#: ../src/tsc-main.c:323
+msgid "Unable to export connections"
+msgstr "無法輸出連線"
+
+#: ../src/plugins/default/tsc-generic-provider.c:35
+msgid "Custom Command"
+msgstr "自定指令"
+
+#: ../src/plugins/default/tsc-generic-provider.c:36
+msgid "Create a generic freeform connection"
+msgstr "建立一般形式的連線"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:37
+#, c-format
+msgid "RDP on %s"
+msgstr "%s 上的 RDP"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:75
+msgid "Windows Terminal Service"
+msgstr "Windows 終端機服務"
+
+#: ../src/plugins/default/tsc-rdp-provider.c:76
+msgid "Connect to Windows machines via Terminal Services"
+msgstr "透過終端機服務連接至 Windows 機器"
+
+#: ../src/plugins/default/tsc-rdp-connection.c:49
+#, c-format
+msgid "Connected to '%s'"
+msgstr "連接至「%s」"
+
+#: ../src/plugins/default/tsc-rdp-connection.c:51
+#, c-format
+msgid "You are connected to '%s' in fullscreen mode.  Use Control+Alt+Enter to switch to and from windowed mode."
+msgstr "目前是以全螢幕模式連接至「%s」。使用 Control+Alt+Enter 可在視窗模式與該模式之間進行切換。"
+
+#: ../src/plugins/default/tsc-generic-edit-dialog.c:66
+msgid "Command is a required field"
+msgstr "指令為必要欄位"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:218
+msgid "Host is a required field"
+msgstr "主機為必要欄位"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:223
+msgid "User is a required field"
+msgstr "使用者為必要欄位"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:228
+msgid "Password is a required field"
+msgstr "密碼為必要欄位"
+
+#: ../src/plugins/default/tsc-rdp-edit-dialog.c:233
+msgid "Domain is a required field"
+msgstr "網域為必要欄位"
+
+#: ../src/tsc-connection.c:90
+msgid "New Connection"
+msgstr "新連線"
+
+#: ../src/tsc-connection.c:170
+#, c-format
+msgid "Network connection is not available."
+msgstr "網路連線不可用。"
+
+#: ../src/tsc-connection.c:521
+msgid "Failed to Save"
+msgstr "無法儲存"
+
+#: ../src/tsc-connection.c:521
+msgid "Failed to save places.xbel"
+msgstr "無法儲存 places.xbel"
+

@@ -1,0 +1,81 @@
+<gconfschemafile>
+    <schemalist>
+
+        <schema>
+            <key>/schemas/desktop/gnome/url-handlers/rdp/command</key>
+            <applyto>/desktop/gnome/url-handlers/rdp/command</applyto>
+            <owner>tsclient</owner>
+            <type>string</type>
+            <default>tsclient --connect "%s"</default>
+            <locale name="C">
+                <short></short>
+                <long></long>
+            </locale>
+        </schema>
+
+
+        <schema>
+            <key>/schemas/desktop/gnome/url-handlers/rdp/needs_terminal</key>
+            <applyto>/desktop/gnome/url-handlers/rdp/needs_terminal</applyto>
+            <owner>tsclient</owner>
+            <type>bool</type>
+            <default>false</default>
+            <locale name="C">
+                <short></short>
+                <long></long>
+            </locale>
+        </schema>
+
+
+        <schema>
+            <key>/schemas/desktop/gnome/url-handlers/rdp/enabled</key>
+            <applyto>/desktop/gnome/url-handlers/rdp/enabled</applyto>
+            <owner>tsclient</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short></short>
+                <long></long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/desktop/gnome/url-handlers/vnc/command</key>
+            <applyto>/desktop/gnome/url-handlers/vnc/command</applyto>
+            <owner>tsclient</owner>
+            <type>string</type>
+            <default>tsclient --connect "%s"</default>
+            <locale name="C">
+                <short></short>
+                <long></long>
+            </locale>
+        </schema>
+
+
+        <schema>
+            <key>/schemas/desktop/gnome/url-handlers/vnc/needs_terminal</key>
+            <applyto>/desktop/gnome/url-handlers/vnc/needs_terminal</applyto>
+            <owner>tsclient</owner>
+            <type>bool</type>
+            <default>false</default>
+            <locale name="C">
+                <short></short>
+                <long></long>
+            </locale>
+        </schema>
+
+
+        <schema>
+            <key>/schemas/desktop/gnome/url-handlers/vnc/enabled</key>
+            <applyto>/desktop/gnome/url-handlers/vnc/enabled</applyto>
+            <owner>tsclient</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short></short>
+                <long></long>
+            </locale>
+        </schema>
+
+    </schemalist>
+</gconfschemafile>
