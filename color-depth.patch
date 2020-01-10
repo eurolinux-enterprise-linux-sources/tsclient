@@ -1,0 +1,236 @@
+diff -Naur b/data/tsclient.glade a/data/tsclient.glade
+--- b/data/tsclient.glade	2012-01-30 12:14:59.380723821 +0530
++++ a/data/tsclient.glade	2012-01-30 12:13:01.102385870 +0530
+@@ -720,7 +720,8 @@
+                         <child>
+                           <widget class="GtkComboBox" id="bitdepth_combo">
+                             <property name="visible">True</property>
+-                            <property name="items" translatable="yes">24
++                            <property name="items" translatable="yes">32
++24
+ 16
+ 15
+ 8
+diff -Naur b/src/plugins/default/tsc-rdp-connection.c a/src/plugins/default/tsc-rdp-connection.c
+--- b/src/plugins/default/tsc-rdp-connection.c	2012-01-30 12:14:59.380723821 +0530
++++ a/src/plugins/default/tsc-rdp-connection.c	2012-02-23 21:48:29.499814521 +0530
+@@ -87,6 +87,24 @@
+ 	}
+ }
+ 
++static const char *
++tsc_rdp_bpp_serialize (TSCRdpBitdepth bpp)
++{
++	switch (bpp) {
++	case TSC_RDP_BITDEPTH_24:
++		return "24";
++	case TSC_RDP_BITDEPTH_16:
++		return "16";
++	case TSC_RDP_BITDEPTH_15:
++		return "15";
++	case TSC_RDP_BITDEPTH_8:
++	        return "8";
++	case TSC_RDP_BITDEPTH_32:
++	default:
++		return "32";
++	}
++}
++
+ static TSCRdpExperience
+ tsc_rdp_experience_unserialize (const char *experience)
+ {
+@@ -103,12 +121,29 @@
+ 	}
+ }
+ 
++static TSCRdpBitdepth
++tsc_rdp_bpp_unserialize (const char *bpp)
++{
++	if (g_ascii_strcasecmp (bpp, "32") == 0) {
++		return TSC_RDP_BITDEPTH_32;
++	} else if (g_ascii_strcasecmp (bpp, "24") == 0) {
++		return TSC_RDP_BITDEPTH_24;
++	} else if (g_ascii_strcasecmp (bpp, "16") == 0) {
++		return TSC_RDP_BITDEPTH_16;
++	} else if (g_ascii_strcasecmp (bpp, "15") == 0) {
++		return TSC_RDP_BITDEPTH_15;
++	} else if (g_ascii_strcasecmp (bpp, "8") == 0) {
++		return TSC_RDP_BITDEPTH_8;
++	} else {
++		return TSC_RDP_BITDEPTH_32;
++	}
++}
++
+ static void
+ tsc_rdp_connection_stopped_cb (TSCSpawn *spawn, TSCRdpConnection *connection)
+ {
+ 	GError *error = NULL;
+ 	int status;
+-
+ 	status = tsc_spawn_get_status (spawn);
+ 	if (WIFEXITED (status) && WEXITSTATUS (status) == 2) {
+ 		/* rdesktop returns status 2 if you just close the window
+@@ -206,11 +241,25 @@
+ 		tsc_spawn_append_args (connection->spawn, "-e", NULL);
+ 	}
+ 
+-	if (connection->bpp > 0) {
+-		char *bpp_str = g_strdup_printf ("%d", connection->bpp);
+-		tsc_spawn_append_args (connection->spawn, "-a", bpp_str, NULL);
+-		g_free (bpp_str);
++	switch (connection->bpp) {
++	case TSC_RDP_BITDEPTH_32:
++	  tsc_spawn_append_args (connection->spawn, "-a", "32", NULL);
++	  break;
++	case TSC_RDP_BITDEPTH_24:
++	  tsc_spawn_append_args (connection->spawn, "-a", "24", NULL);
++	  break;
++	case TSC_RDP_BITDEPTH_16:
++	  tsc_spawn_append_args (connection->spawn, "-a", "16", NULL);
++	  break;
++	case TSC_RDP_BITDEPTH_15:
++	  tsc_spawn_append_args (connection->spawn, "-a", "15", NULL);
++	  break;
++	case TSC_RDP_BITDEPTH_8:
++	  tsc_spawn_append_args (connection->spawn, "-a", "8", NULL);
++	  break;
++	default:
++	  break;
+ 	}
+ 
+ 	if (connection->compression) {
+ 		tsc_spawn_append_args (connection->spawn, "-z", NULL);
+@@ -321,11 +372,11 @@
+ 					connection->height);
+ 	}
+ 
+-	if (connection->bpp > 0) {
+-		g_key_file_set_integer (keys, RDP_CONFIG_GROUP,
+-					RDP_KEY_BPP,
+-					connection->bpp);
+-	}
++	const char *bpp = tsc_rdp_bpp_serialize (connection->bpp);
++	
++	g_key_file_set_string (keys, RDP_CONFIG_GROUP,
++			       RDP_KEY_BPP,
++			       bpp);
+ 
+ 	g_key_file_set_boolean (keys, RDP_CONFIG_GROUP,
+ 				RDP_KEY_FULLSCREEN,
+@@ -361,6 +414,7 @@
+ tsc_rdp_connection_restore (TSCConnection *con, GKeyFile *keys)
+ {
+ 	char *experience;
++	char *bpp;
+ 	TSCRdpConnection *connection = TSC_RDP_CONNECTION (con);
+ 	
+ 	connection->host = g_key_file_get_string (keys, RDP_CONFIG_GROUP,
+@@ -384,9 +438,10 @@
+ 						    RDP_KEY_WIDTH, NULL);
+ 	connection->height = g_key_file_get_integer (keys, RDP_CONFIG_GROUP,
+ 						    RDP_KEY_HEIGHT, NULL);
+-	connection->bpp = g_key_file_get_integer (keys, RDP_CONFIG_GROUP,
++	bpp= g_key_file_get_string (keys, RDP_CONFIG_GROUP,
+ 						    RDP_KEY_BPP, NULL);
+-
++	connection->bpp = tsc_rdp_bpp_unserialize (bpp);
++	g_free (bpp);
+ 	get_boolean_value (keys, RDP_KEY_FULLSCREEN,
+ 			   &connection->fullscreen);
+ 	get_boolean_value (keys, RDP_KEY_ENCRYPTION,
+diff -Naur b/src/plugins/default/tsc-rdp-connection.h a/src/plugins/default/tsc-rdp-connection.h
+--- b/src/plugins/default/tsc-rdp-connection.h	2012-01-30 12:14:59.380723821 +0530
++++ a/src/plugins/default/tsc-rdp-connection.h	2012-02-23 20:20:10.535268032 +0530
+@@ -22,6 +22,14 @@
+ 	TSC_RDP_EXPERIENCE_BROADBAND,
+ 	TSC_RDP_EXPERIENCE_LAN,
+ } TSCRdpExperience;
++
++typedef enum {
++	TSC_RDP_BITDEPTH_32,
++	TSC_RDP_BITDEPTH_24,
++	TSC_RDP_BITDEPTH_16,
++	TSC_RDP_BITDEPTH_15,
++	TSC_RDP_BITDEPTH_8,
++} TSCRdpBitdepth;
+ 	
+ 
+ typedef struct _TSCRdpConnection {
+@@ -39,7 +47,7 @@
+ 
+ 	int width;
+ 	int height;
+-	int bpp;
++	TSCRdpBitdepth bpp;
+ 
+ 	gboolean fullscreen;
+ 	gboolean encryption;
+diff -Naur b/src/plugins/default/tsc-rdp-edit-dialog.c a/src/plugins/default/tsc-rdp-edit-dialog.c
+--- b/src/plugins/default/tsc-rdp-edit-dialog.c	2012-01-30 12:14:59.382715127 +0530
++++ a/src/plugins/default/tsc-rdp-edit-dialog.c	2012-02-23 21:05:47.970841301 +0530
+@@ -36,7 +36,7 @@
+ {
+ 	TSCRdpEditDialog *dialog;
+ 	TSCRdpConnection *connection;
+-	int experience_index = 0, width, height, bpp_index;
++	int experience_index = 0, width, height, bpp_index=0;
+ 	GdkScreen *screen;
+ 	
+ 	dialog = TSC_RDP_EDIT_DIALOG (edit_dialog);
+@@ -136,18 +136,21 @@
+ 				   (gdouble) height);
+ 
+ 	switch (connection->bpp) {
+-	case 24:
+-		bpp_index = 0;
++	case TSC_RDP_BITDEPTH_32:
++	        bpp_index = 0;
+ 		break;
+-	case 16:
++	case TSC_RDP_BITDEPTH_24:
+ 		bpp_index = 1;
+ 		break;
+-	case 15:
++	case TSC_RDP_BITDEPTH_16:
+ 		bpp_index = 2;
+ 		break;
+-	case 8:
++	case TSC_RDP_BITDEPTH_15:
+ 		bpp_index = 3;
+ 		break;
++	case TSC_RDP_BITDEPTH_8:
++		bpp_index = 4;
++		break;
+ 	default:
+ 		bpp_index = 0;
+ 		break;
+@@ -215,6 +218,29 @@
+ 		break;
+ 	}
+ 
++	switch (gtk_combo_box_get_active (GTK_COMBO_BOX (glade_xml_get_widget (dialog->xml,
++									       "bitdepth_combo")))) {
++	case 0:
++		connection->bpp = TSC_RDP_BITDEPTH_32;
++		break;
++	case 1:
++		connection->bpp = TSC_RDP_BITDEPTH_24;
++		break;
++	case 2:
++		connection->bpp = TSC_RDP_BITDEPTH_16;
++		break;
++	case 3:
++		connection->bpp = TSC_RDP_BITDEPTH_15;
++		break;
++	case 4:
++		connection->bpp = TSC_RDP_BITDEPTH_8;
++		break;
++	default:
++		connection->bpp = TSC_RDP_BITDEPTH_32;
++		break;
++	}
++	
++
+ 	connection->fullscreen = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (glade_xml_get_widget (dialog->xml,
+ 													"rdp_fullscreen_radio")));
+ 	connection->width = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (glade_xml_get_widget (dialog->xml, "rdp_window_width_spin")));

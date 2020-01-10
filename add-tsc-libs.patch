@@ -1,0 +1,11 @@
+diff -up tsclient-2.0.2/src/plugins/default/Makefile.am~ tsclient-2.0.2/src/plugins/default/Makefile.am
+--- tsclient-2.0.2/src/plugins/default/Makefile.am~	2008-11-26 16:19:02.000000000 -0500
++++ tsclient-2.0.2/src/plugins/default/Makefile.am	2014-05-14 15:15:16.000000000 -0400
+@@ -64,6 +64,6 @@ libtsc_default_la_SOURCES =		\
+ 	tsc-vnc-provider.c			\
+ 	tsc-vnc-provider.h
+ 
+-libtsc_default_la_LDFLAGS = -module -avoid-version
++libtsc_default_la_LDFLAGS = -module -avoid-version $(TSC_LIBS)
+ 
+ EXTRA_DIST = tsc-ssh-askpass

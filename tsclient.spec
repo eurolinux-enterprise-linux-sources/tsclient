@@ -8,7 +8,7 @@
 Summary: Client for VNC and Windows Terminal Server
 Name: tsclient
 Version: 2.0.2
-Release: 8%{?dist}
+Release: 10%{?dist}
 URL: http://sourceforge.net/projects/tsclient
 Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 
@@ -44,6 +44,8 @@ Patch6: tsclient-libgnomeui.patch
 Patch7: tsclient-glade-ids.patch
 Patch8: client-host-name.patch
 Patch9: tsclient-xdmcp.patch
+Patch10: color-depth.patch
+Patch11: add-tsc-libs.patch
 
 %description
 tsclient is a frontend that makes it easy to use rdesktop and vncviewer.
@@ -68,6 +70,8 @@ develop tsclient plugins.
 %patch7 -p1 -b .glade-ids
 %patch8 -p1 -b .client-host-name
 %patch9 -p1 -b .xdmcp
+%patch10 -p1 -b .color-depth
+%patch11 -p1 -b .add-tsc-libs
 
 libtoolize --force --copy
 autoreconf
@@ -142,8 +146,19 @@ fi
 %files devel
 %{_includedir}/tsclient
 
-
 %changelog
+* Wed May 14 2014 Soren Sandmann <ssp@redhat.com> - 2.0.2-10
+- Fix bug 848526 in a way that doesn't cause as many DT_NEEDED
+  dependencies to be added.
+
+* Wed May 14 2014 Soren Sandmann <ssp@redhat.com> - 2.0.2-9
+- Add patch to make the color depth option actually work
+  Fixes bug 798631
+
+* Wed May 14 2014 Soren Sandmann <ssp@redhat.com> - 2.0.2-9
+- Drop dropping of unneeded direct library deps
+  Fixes bug 848526
+
 * Thu Feb 16 2012 Soren Sandmann <ssp@redhat.com> - 2.0.2-8
 - Fix bug 734826
 
