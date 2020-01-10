@@ -8,7 +8,7 @@
 Summary: Client for VNC and Windows Terminal Server
 Name: tsclient
 Version: 2.0.2
-Release: 7%{?dist}
+Release: 8%{?dist}
 URL: http://sourceforge.net/projects/tsclient
 Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 
@@ -43,6 +43,7 @@ Patch5: realvnc-args.patch
 Patch6: tsclient-libgnomeui.patch
 Patch7: tsclient-glade-ids.patch
 Patch8: client-host-name.patch
+Patch9: tsclient-xdmcp.patch
 
 %description
 tsclient is a frontend that makes it easy to use rdesktop and vncviewer.
@@ -66,6 +67,7 @@ develop tsclient plugins.
 %patch6 -p1 -b .libgnomeui
 %patch7 -p1 -b .glade-ids
 %patch8 -p1 -b .client-host-name
+%patch9 -p1 -b .xdmcp
 
 libtoolize --force --copy
 autoreconf
@@ -142,6 +144,9 @@ fi
 
 
 %changelog
+* Thu Feb 16 2012 Soren Sandmann <ssp@redhat.com> - 2.0.2-8
+- Fix bug 734826
+
 * Thu Jul 21 2011 Soren Sandmann <ssp@redhat.com> - 2.0.2-7
 - Patch to allow passing client hostname to rdesktop (#667684)
 
