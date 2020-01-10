@@ -1,0 +1,137 @@
+diff -up tsclient-2.0.2/data/tsclient.glade.client-host-name tsclient-2.0.2/data/tsclient.glade
+--- tsclient-2.0.2/data/tsclient.glade.client-host-name	2011-08-06 00:46:20.912000107 -0400
++++ tsclient-2.0.2/data/tsclient.glade	2011-08-06 00:46:20.918000107 -0400
+@@ -431,7 +431,7 @@ Prompt For Reconnect After Error</proper
+                     <child>
+                       <widget class="GtkTable" id="table3">
+                         <property name="visible">True</property>
+-                        <property name="n_rows">7</property>
++                        <property name="n_rows">8</property>
+                         <property name="n_columns">2</property>
+                         <property name="column_spacing">6</property>
+                         <property name="row_spacing">6</property>
+@@ -652,6 +652,35 @@ Prompt For Reconnect After Error</proper
+                             <property name="bottom_attach">7</property>
+                           </packing>
+                         </child>
++                        <child>
++                          <widget class="GtkEntry" id="rdp_client_hostname_entry">
++                            <property name="visible">True</property>
++                            <property name="can_focus">True</property>
++                            <property name="invisible_char">&#x25CF;</property>
++                            <property name="activates_default">True</property>
++                          </widget>
++                          <packing>
++                            <property name="left_attach">1</property>
++                            <property name="right_attach">2</property>
++                            <property name="top_attach">7</property>
++                            <property name="bottom_attach">8</property>
++                            <property name="y_options"></property>
++                          </packing>
++                        </child>
++                        <child>
++                          <widget class="GtkLabel" id="label1">
++                            <property name="visible">True</property>
++                            <property name="xalign">0</property>
++                            <property name="label" translatable="yes">_Client Hostname:</property>
++                            <property name="use_underline">True</property>
++                            <property name="mnemonic_widget">rdp_client_hostname_entry</property>
++                          </widget>
++                          <packing>
++                            <property name="top_attach">7</property>
++                            <property name="bottom_attach">8</property>
++                            <property name="y_options"></property>
++                          </packing>
++                        </child>
+                       </widget>
+                     </child>
+                   </widget>
+diff -up tsclient-2.0.2/src/plugins/default/tsc-rdp-connection.c.client-host-name tsclient-2.0.2/src/plugins/default/tsc-rdp-connection.c
+--- tsclient-2.0.2/src/plugins/default/tsc-rdp-connection.c.client-host-name	2008-11-26 16:31:35.000000000 -0500
++++ tsclient-2.0.2/src/plugins/default/tsc-rdp-connection.c	2011-08-06 00:52:09.950000108 -0400
+@@ -19,6 +19,7 @@
+ #define RDP_KEY_USERNAME "username"
+ #define RDP_KEY_PASSWORD "password"
+ #define RDP_KEY_DOMAIN "domain"
++#define RDP_KEY_CLIENT_HOSTNAME "client_hostname"
+ #define RDP_KEY_SOUND "sound"
+ #define RDP_KEY_SHELL "shell"
+ #define RDP_KEY_INITIAL_DIR "initial_directory"
+@@ -175,6 +176,10 @@ tsc_rdp_connection_start (TSCConnection 
+ 		tsc_spawn_append_args (connection->spawn, "-d", connection->domain, NULL);
+ 	}
+ 
++	if (connection->client_hostname) {
++		tsc_spawn_append_args (connection->spawn, "-n", connection->client_hostname, NULL);
++	}
++
+ 	if (connection->sound) {
+ 		tsc_spawn_append_args (connection->spawn, "-r", "sound", NULL);
+ 	}
+@@ -285,6 +290,11 @@ tsc_rdp_connection_save (TSCConnection *
+ 				       RDP_KEY_DOMAIN, connection->domain);
+ 	}
+ 
++	if (connection->client_hostname) {
++		g_key_file_set_string (keys, RDP_CONFIG_GROUP,
++				       RDP_KEY_CLIENT_HOSTNAME, connection->client_hostname);
++	}
++
+ 	g_key_file_set_boolean (keys, RDP_CONFIG_GROUP,
+ 				RDP_KEY_SOUND, connection->sound);
+ 
+@@ -360,6 +370,8 @@ tsc_rdp_connection_restore (TSCConnectio
+ 	connection->password = g_key_file_get_string (keys, RDP_CONFIG_GROUP,
+ 						      RDP_KEY_PASSWORD, NULL);
+ 
++	connection->client_hostname = g_key_file_get_string (keys, RDP_CONFIG_GROUP,
++						  RDP_KEY_CLIENT_HOSTNAME, NULL);
+ 	connection->domain = g_key_file_get_string (keys, RDP_CONFIG_GROUP,
+ 						  RDP_KEY_DOMAIN, NULL);
+ 	get_boolean_value (keys, RDP_KEY_SOUND,
+@@ -397,6 +409,7 @@ tsc_rdp_connection_finalize (GObject *ob
+ 	g_free (connection->username);
+ 	g_free (connection->password);
+ 	g_free (connection->domain);
++	g_free (connection->client_hostname);
+ 	g_free (connection->shell);
+ 	g_free (connection->initial_directory);
+ 	
+diff -up tsclient-2.0.2/src/plugins/default/tsc-rdp-connection.h.client-host-name tsclient-2.0.2/src/plugins/default/tsc-rdp-connection.h
+--- tsclient-2.0.2/src/plugins/default/tsc-rdp-connection.h.client-host-name	2008-11-26 16:31:24.000000000 -0500
++++ tsclient-2.0.2/src/plugins/default/tsc-rdp-connection.h	2011-08-06 00:46:20.920000107 -0400
+@@ -32,6 +32,7 @@ typedef struct _TSCRdpConnection {
+ 	char *username;
+ 	char *password;
+ 	char *domain;
++	char *client_hostname;
+ 
+ 	char *shell;
+ 	char *initial_directory;
+diff -up tsclient-2.0.2/src/plugins/default/tsc-rdp-edit-dialog.c.client-host-name tsclient-2.0.2/src/plugins/default/tsc-rdp-edit-dialog.c
+--- tsclient-2.0.2/src/plugins/default/tsc-rdp-edit-dialog.c.client-host-name	2008-11-26 17:37:29.000000000 -0500
++++ tsclient-2.0.2/src/plugins/default/tsc-rdp-edit-dialog.c	2011-08-06 00:46:20.922000107 -0400
+@@ -61,6 +61,10 @@ tsc_rdp_edit_dialog_load (TSCEditDialog 
+ 		gtk_entry_set_text (GTK_ENTRY (glade_xml_get_widget (dialog->xml, "domain_entry")),
+ 				    connection->domain);
+ 	}
++	if (connection->client_hostname) {
++		gtk_entry_set_text (GTK_ENTRY (glade_xml_get_widget (dialog->xml, "rdp_client_hostname_entry")),
++				    connection->client_hostname);
++	}
+ 
+ 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (glade_xml_get_widget (dialog->xml, "sound_check")),
+ 				      connection->sound);
+@@ -183,6 +187,12 @@ tsc_rdp_edit_dialog_save (TSCEditDialog 
+ 											    "domain_entry"))));
+ 	NULLIFY_IF_EMPTY (connection->domain);
+ 
++	g_free (connection->client_hostname);
++	connection->client_hostname = g_strdup (gtk_entry_get_text (GTK_ENTRY (glade_xml_get_widget (dialog->xml,
++											    "rdp_client_hostname_entry"))));
++	NULLIFY_IF_EMPTY (connection->client_hostname);
++
++
+ 	connection->sound = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (glade_xml_get_widget (dialog->xml,
+ 												   "sound_check")));
+ 
